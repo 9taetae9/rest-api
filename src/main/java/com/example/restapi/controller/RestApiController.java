@@ -57,4 +57,25 @@ public class RestApiController {
     ){
         System.out.println(bookQueryParam);
     }
+
+    //TODO parameter 2가지를 받기. int 형태로 받아서 두수의 덧셈, 곱셈
+    //TODO String 타입 boolean 타입도 받아보기
+    @GetMapping(path = "/calculate")
+    public String calculate(
+       @RequestParam int num1,
+       @RequestParam int num2
+    ){
+        int sum = num1 + num2;
+        int prodouct = num1 * num2;
+        return "Sum: " + sum + ", Product: " + prodouct;
+    }
+
+    @GetMapping(path = "/process")
+    public String process(
+            @RequestParam String str,
+            @RequestParam boolean flag
+    ){
+        return "Received String: " + str + ", Boolean: " + flag;
+    }
+
 }
