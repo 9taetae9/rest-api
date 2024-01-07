@@ -1,5 +1,6 @@
 package com.example.restapi.controller;
 
+import com.example.restapi.model.BookQueryParam;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -52,14 +53,8 @@ public class RestApiController {
 
     @GetMapping(path = "/book2")
     public void queryParamDto(
-            @RequestParam String category,
-            @RequestParam String issuedYear,
-            @RequestParam(name = "issued-month") String issuedMonth,
-            @RequestParam(name = "issued_day") String issuedDay
+            BookQueryParam bookQueryParam
     ){
-        System.out.println(category);
-        System.out.println(issuedYear);
-        System.out.println(issuedMonth);
-        System.out.println(issuedDay);
+        System.out.println(bookQueryParam);
     }
 }
