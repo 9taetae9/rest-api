@@ -89,6 +89,9 @@ public class RestApiController {
             @PathVariable String userName
     ){
         log.info("user-name : {}",userName);
+
+
     }
+
 
 }
