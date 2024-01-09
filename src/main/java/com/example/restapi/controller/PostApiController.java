@@ -21,10 +21,12 @@ public class PostApiController {
 
 
     @PostMapping("/user")
-    public void User(
+    public UserRequest User(
         @RequestBody
         UserRequest userRequest
     ){
         System.out.println(userRequest);
+
+        return userRequest;
     }
 }

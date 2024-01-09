@@ -17,6 +17,7 @@ public class PutApiController {
             @RequestBody
             UserRequest userRequest
     ){
-        log.info("Request : {}", userRequest);
+        log.info("Request : {}", userRequest); //log를 통해 출력
+       // System.out.println("") 보다 처리 속도 빠름 (프로그램 성능면에서 log 사용)
     }
 }
