@@ -1,6 +1,7 @@
 package com.example.validation.model;
 
 import com.example.validation.annotation.PhoneNumber;
+import com.example.validation.annotation.YearMonth;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import jakarta.validation.constraints.*;
@@ -43,6 +44,9 @@ public class UserRegisterRequest {
 
     @FutureOrPresent
     private LocalDateTime registerAt;
+
+    @YearMonth(pattern = "yyyy-MM")
+    private String birthDayYearMonth;
 
     @AssertTrue(message =  "name or nickName은 존재해야 합니다.")
     //@AssertFalse false를 리턴하여야함!
