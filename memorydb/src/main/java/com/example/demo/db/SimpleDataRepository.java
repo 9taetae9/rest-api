@@ -31,7 +31,8 @@ abstract public class SimpleDataRepository<T extends Entity, ID extends Long> im
 
         if(prevData.isPresent()){
             //기존 데이터 있는 경우
-            dataList.remove(prevData);
+            //Optional<USerEntity>
+            dataList.remove(prevData.get());
             dataList.add(data); //기존 데이터는 지우고 새데이터 삽입. id는 동일
         }else{
             //없는 경우
@@ -71,7 +72,7 @@ abstract public class SimpleDataRepository<T extends Entity, ID extends Long> im
                 .findFirst();
 
         if(deleteEntity.isPresent()){
-            dataList.remove(deleteEntity);
+            dataList.remove(deleteEntity.get());
         }
     }
 }
