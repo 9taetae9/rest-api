@@ -46,4 +46,11 @@ public class UserApiController {
         return response.get();
     }
 
+    @GetMapping("/score")
+    public List<UserEntity> filterScore(
+            @RequestParam int score
+    ){
+        return userService.filterScore(score);
+    }
+
 }
