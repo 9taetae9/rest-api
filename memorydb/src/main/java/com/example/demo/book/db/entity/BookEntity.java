@@ -1,16 +1,27 @@
 package com.example.demo.book.db.entity;
 
-import com.example.demo.entity.Entity;
-import lombok.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-@EqualsAndHashCode(callSuper = true)
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BookEntity extends Entity {
+@Entity(name = "book")
+public class BookEntity{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
     private String category;
     private BigDecimal amount;

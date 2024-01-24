@@ -33,7 +33,7 @@ public class UserApiController {
     public void delete(
             @PathVariable Long id
     ){
-        userService.delete(id);
+       // userService.delete(id);
     }
 
 
